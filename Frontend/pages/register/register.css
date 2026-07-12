@@ -1,0 +1,144 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background-color: #f8fafc;
+    color: #1f2937;
+    min-height: 100vh;
+}
+
+/* Header */
+
+header {
+    padding: 20px 40px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.logo img {
+    display: block;
+    max-width: 180px;
+    height: auto;
+}
+
+/* Main Layout */
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+}
+
+/* Register Card */
+
+.register-container {
+    width: 100%;
+    max-width: 500px;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.register-container h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 2rem;
+    color: #111827;
+}
+
+.register-container p {
+    text-align: center;
+}
+
+/* Form */
+
+.register-form {
+    margin-top: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    font-size: 1rem;
+    background-color: #ffffff;
+    transition: 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #146438;
+    box-shadow: 0 0 0 2px rgba(11, 32, 13, 0.12);
+}
+
+/* Button */
+
+button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: #146438;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    opacity: 0.95;
+}
+
+/* Login Link */
+
+.login-link {
+    margin-top: 24px;
+    text-align: center;
+}
+
+.login-link a {
+    text-decoration: none;
+    color: #146438;
+    font-weight: 600;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    .register-container {
+        padding: 25px;
+    }
+
+    .register-container h1 {
+        font-size: 1.7rem;
+    }
+
+    header {
+        padding: 15px 20px;
+    }
+}

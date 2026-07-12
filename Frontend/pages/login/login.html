@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In - Medi nt</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    <header>
+        <a href="/" class="logo">
+            <img
+                src="../assets/medint-logo.png"
+                alt="Mediant Logo"
+                width="180"
+                height="60">
+        </a>
+    </header>
+
+    <main>
+        <section class="login-container">
+
+            <h1>Log In Your Account</h1>
+
+            <form
+                id ="login-form" class="login-form"
+                action="/login"
+                method="POST">
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="ahmad@gmail.com"
+                        autocomplete="email"
+                        maxlength="255"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Minimum 8 characters"
+                        autocomplete="new-password"
+                        minlength="8"
+                        required>
+                </div>
+
+                <button type="submit">
+                    Log In
+                </button>
+
+            </form>
+
+            <p class="register-link">
+                Don't have an account?
+                <a href="../register/register.html">Create Account</a>
+            </p>
+
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="login.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Order History - Medi nt</title>
+    <link rel="stylesheet" href="../shared/css/common.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+
+            <header class="sidebar-header">
+                <a href="/" class="logo">
+                    <img src="../assets/medint-logo.png" alt="Mediant" width="180" height="60">
+                </a>
+                <hr>
+            </header>
+
+            <nav class="sidebar-nav">
+                <ul>
+
+                    <li class="inventory active">
+                        <span class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-package2-icon lucide-package-2">
+                                <path d="M12 3v6" />
+                                <path
+                                    d="M16.76 3a2 2 0 0 1 1.8 1.1l2.23 4.479a2 2 0 0 1 .21.891V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9.472a2 2 0 0 1 .211-.894L5.45 4.1A2 2 0 0 1 7.24 3z" />
+                                <path d="M3.054 9.013h17.893" />
+                            </svg>
+                        </span>
+                        Inventory
+                    </li>
+
+                    <li class="order">
+                        <span class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-notebook-text-icon lucide-notebook-text">
+                                <path d="M2 6h4" />
+                                <path d="M2 10h4" />
+                                <path d="M2 14h4" />
+                                <path d="M2 18h4" />
+                                <rect width="16" height="20" x="4" y="2" rx="2" />
+                                <path d="M9.5 8h5" />
+                                <path d="M9.5 12H16" />
+                                <path d="M9.5 16H14" />
+                            </svg>
+                        </span>
+                        Orders
+                    </li>
+
+                    <li class="history">
+                        <span class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-history-icon lucide-history">
+                                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                                <path d="M3 3v5h5" />
+                                <path d="M12 7v5l4 2" />
+                            </svg>
+                        </span>
+                        Order History
+                    </li>
+
+                    <li class="supplier">
+                        <span class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-truck-icon lucide-truck">
+                                <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2" />
+                                <path d="M15 18H9" />
+                                <path
+                                    d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14" />
+                                <circle cx="17" cy="18" r="2" />
+                                <circle cx="7" cy="18" r="2" />
+                            </svg>
+                        </span>
+                        Suppliers
+                    </li>
+
+                    <li class="setting">
+                        <span class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-settings-icon lucide-settings">
+                                <path
+                                    d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915" />
+                                <circle cx="12" cy="12" r="3" />
+                            </svg>
+                        </span>
+                        Settings
+                    </li>
+                </ul>
+            </nav>
+
+            <footer class="sidebar-footer">
+                <button class="btn btn-danger">Logout</button>
+            </footer>
+        </aside>
+
+        <main id="content" class="content">
+            <section class="topbar">
+                <div>
+                    <h2>Order History</h2>
+                    <p>Medicines that have been ordered.</p>
+                </div>
+            </section>
+
+            <section class="table-section">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Medicine</th>
+                            <th>Ordered Qty</th>
+                        </tr>
+                    </thead>
+                    
+                    
+                    <tbody id="table">
+                       
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="order_history.js"></script>
+    <script type="module" src="../shared/js/auth.js"></script>
+    <script type="module" src="../shared/js/navigate.js"></script>
+
+
+</body>
+
+</html>
+
+<!-- 
+      <section class="stats">
+
+        <div class="stat-card">
+          <h3>Low Stock Items</h3>
+          <p>12</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>Pending Orders</h3>
+          <p>4</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>Sent Orders</h3>
+          <p>8</p>
+        </div>
+
+      </section> -->
