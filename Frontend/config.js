@@ -1,1 +1,1 @@
-const API_BASE_URL = "https://pharmacymanagement-five.vercel.app/";
+const API_BASE_URL = "https://pharmacymanagement-t5v0.onrender.com";
