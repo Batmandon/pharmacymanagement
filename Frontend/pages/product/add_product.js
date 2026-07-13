@@ -21,7 +21,7 @@ document.getElementById("save-products").addEventListener("click", async (event)
 
     console.log("Sending products:", productData);
 
-    const response = await fetch("http://127.0.0.1:8000/addproducts", {
+    const response = await fetch(`${API_BASE_URL}/addproducts`, {
         method: "POST",
         credentials: "include",
         headers: {

@@ -1,6 +1,6 @@
 export async function checkAuth() {
     try {
-        const response = await fetch("http://127.0.0.1:8000/me", {
+        const response = await fetch(`${API_BASE_URL}/me`, {
             method: "GET",
             credentials: "include"
         });
@@ -13,7 +13,7 @@ export async function checkAuth() {
         }
 
         if (response.status === 401) {
-            const refreshResponse = await fetch("http://127.0.0.1:8000/refreshtoken", {
+            const refreshResponse = await fetch(`${API_BASE_URL}/refreshtoken`, {
                 method: "POST",
                 credentials: "include"
             });
@@ -33,7 +33,7 @@ export async function checkAuth() {
 
 export async function logout() {
     try {
-        const response = await fetch("http://127.0.0.1:8000/logout", {
+        const response = await fetch(`${API_BASE_URL}/logout`, {
             method: "POST",
             credentials: "include"
         });

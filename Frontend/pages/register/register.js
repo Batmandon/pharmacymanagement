@@ -8,7 +8,7 @@ document.getElementById("register-form").addEventListener("submit", async (e) =>
         password: document.getElementById("password").value,
     };
 
-    const response = await fetch("http://127.0.0.1:8000/register", {
+    const response = await fetch(`${API_BASE_URL}/register`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

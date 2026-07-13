@@ -16,7 +16,7 @@ document.getElementById("add-product").addEventListener("click", async (event) =
 });
 
 async function fetchProducts() {
-    const response = await fetch("http://127.0.0.1:8000/getproduct", {
+    const response = await fetch(`${API_BASE_URL}/getproduct`, {
         method: "GET",
         credentials: "include"
     });
@@ -77,7 +77,7 @@ async function fetchProducts() {
 fetchProducts();
 
 async function expiry_status() {
-    const response = await fetch("http://127.0.0.1:8000/expiryproduct", {
+    const response = await fetch(`${API_BASE_URL}/expiryproduct`, {
         method: "PATCH",
         credentials: "include"
     });
@@ -121,7 +121,7 @@ async function deleteProduct() {
             });
             if (result.isConfirmed) {
                 try {
-                    const response = await fetch(`http://127.0.0.1:8000/delete/${productId}`, {
+                    const response = await fetch(`${API_BASE_URL}/delete/${productId}`, {
                         method: "DELETE",
                         credentials: "include"
                     });
@@ -187,7 +187,7 @@ async function editProduct() {
                     quantity: inputs[4].value
                 };
 
-                const response = fetch(`http://127.0.0.1:8000/update/${productId}`, {
+                const response = fetch(`${API_BASE_URL}/update/${productId}`, {
                     method: "PATCH",
                     credentials: "include",
                     headers: {

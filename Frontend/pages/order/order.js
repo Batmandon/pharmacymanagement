@@ -2,7 +2,7 @@ let ordersToSend = [];
 
 // Post order to the server
 async function addOrder() {
-    const response = await fetch("http://127.0.0.1:8000/addorder", {
+    const response = await fetch(`${API_BASE_URL}/addorder`, {
         method: "POST",
         credentials: "include"
     });
@@ -13,7 +13,7 @@ async function addOrder() {
 await addOrder();
 // fetch order from the server and display in the table
 async function fetchOrder() {
-    const response = await fetch("http://127.0.0.1:8000/getorder", {
+    const response = await fetch(`${API_BASE_URL}/getorder`, {
         method: "GET",
         credentials: "include"
     });
@@ -47,7 +47,7 @@ await fetchOrder();
 
 // make a function to generate a link to send order to whatsapp
 async function sendOrder() {
-    const response = await fetch("http://127.0.0.1:8000/sendorder", {
+    const response = await fetch(`${API_BASE_URL}/sendorder`, {
         method: "GET",
         credentials: "include"
     });
@@ -64,7 +64,7 @@ async function sendOrder() {
 };
 
 async function logOrder(confirmDuplicate) {
-    const response = await fetch("http://127.0.0.1:8000/orders", {
+    const response = await fetch(`${API_BASE_URL}/orders`, {
         method: "POST",
         credentials: "include",
         headers: {
@@ -134,7 +134,7 @@ statcard();
 
 
 async function update_status(status) {
-    await fetch(`http://127.0.0.1:8000/update_status/${status}`, {
+    await fetch(`${API_BASE_URL}/update_status/${status}`, {
         method: "PATCH",
         credentials: "include",
         headers: { "Content-Type": "application/json" }
