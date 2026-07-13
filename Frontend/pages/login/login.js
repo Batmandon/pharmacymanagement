@@ -23,7 +23,7 @@ document.getElementById("login-form").addEventListener("submit",async(e) => {
             title: "Login Successful",
             text: "Welcome " + data.name
         }).then(() => {
-            window.location.href = "../dashboard/dashboard.html";
+            window.location.href = "/pages/dashboard/dashboard.html";
         });
     } else {
         Swal.fire({

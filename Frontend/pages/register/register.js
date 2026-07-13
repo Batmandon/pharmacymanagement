@@ -18,7 +18,7 @@ document.getElementById("register-form").addEventListener("submit", async (e) =>
     const data = await response.json();
 
     if (response.ok) {
-        window.location.href = "login.html";
+        window.location.href = "/pages/login/login.html";
     } else {
         data.error
         Swal.fire("Account already exists")

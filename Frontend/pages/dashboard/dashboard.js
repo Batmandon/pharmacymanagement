@@ -12,7 +12,7 @@ const expiry = document.querySelector(".stat-card .expiry")
 document.getElementById("add-product").addEventListener("click", async (event) => {
     event.preventDefault();
     console.log("Add Product button clicked");
-    window.location.href = "../product/add_product.html";
+    window.location.href = "/pages/product/add_product.html";
 });
 
 async function fetchProducts() {
