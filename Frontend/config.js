@@ -1,0 +1,1 @@
+const API_BASE_URL = "https://pharmacymanagement-five.vercel.app/";
