@@ -47,8 +47,8 @@ def login_user(userlogin: UserSignIn, response: Response):
             key = "access_token",
             value = access_token,
             httponly = True,
-            secure = False,
-            samesite = "lax",
+            secure = True, # True for production false for local
+            samesite = "none", # none for production lax for local
             domain = "127.0.0.1",
             max_age = 1800
         )
@@ -56,8 +56,8 @@ def login_user(userlogin: UserSignIn, response: Response):
             key = "refresh_token",
             value = refresh_token,
             httponly = True,
-            secure = False,
-            samesite = "lax",
+            secure = True,
+            samesite = "none",
             domain = "127.0.0.1",
             max_age = 604800
         )
@@ -108,8 +108,8 @@ def get_user_info_refresh_token (request: Request, response: Response):
         key = "access_token",
         value = access_token,
         httponly = True,
-        secure = False,
-        samesite = "lax",
+        secure = True,
+        samesite = "none",
         max_age = 1800
     
     )
@@ -118,14 +118,14 @@ def logout(response: Response):
     response.delete_cookie(
         key="access_token",
         httponly=True,
-        samesite="lax",
-        secure=False
+        samesite="none",
+        secure=True
     )
 
     response.delete_cookie(
         key="refresh_token",
         httponly=True,
-        samesite="lax",
-        secure=False
+        samesite="none",
+        secure=True
     )
     return {"message": "Logged out successfully"}
