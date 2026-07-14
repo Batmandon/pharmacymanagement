@@ -1,18 +1,22 @@
 import psycopg2
+from psycopg2 import pool
 from psycopg2.extras import RealDictCursor
 from contextlib import contextmanager
 from config import DB_PASSWORD, DB_HOST, DB_PORT, DB_USER, DB_NAME
 
+connection_pool = psycopg2.pool.SimpleConnectionPool(
+    1,
+    10,
+    host=DB_HOST,
+    port=DB_PORT,
+    user=DB_USER,
+    password=DB_PASSWORD,
+    dbname=DB_NAME
+)
 
 @contextmanager
 def get_cursor():
-    conn = psycopg2.connect(
-        host=DB_HOST,
-        port=DB_PORT,
-        user=DB_USER,
-        password=DB_PASSWORD,
-        dbname=DB_NAME
-    )
+    conn = connection_pool.getconn()
     try:
         with conn.cursor(cursor_factory=RealDictCursor) as cursor:
             yield cursor
@@ -21,7 +25,7 @@ def get_cursor():
         conn.rollback()
         raise
     finally:
-        conn.close()
+        connection_pool.putconn(conn)
 
 def Create_database():
     try:
