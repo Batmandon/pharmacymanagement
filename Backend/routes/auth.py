@@ -3,9 +3,10 @@ from database import get_cursor
 from utils.utils import hash_password, verify_password
 from services.JWT import create_access_token, create_refresh_token, decode_token
 from fastapi import Response, Request, HTTPException, Request
+import os
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Helperfunction~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+IS_PRODUCTION = os.getenv("ENVIRONMENT") == "production"
 def get_user(cursor, email: str):
     cursor.execute("SELECT * FROM users WHERE email = %s", (email,))
     return cursor.fetchone()
@@ -47,19 +48,19 @@ def login_user(userlogin: UserSignIn, response: Response):
             key = "access_token",
             value = access_token,
             httponly = True,
-            secure = True, # True for production false for local
-            samesite = "none", # none for production lax for local
-            domain = "127.0.0.1",
+            secure = IS_PRODUCTION, # True for production false for local
+            samesite = "none" if IS_PRODUCTION else "lax", # none for production lax for local
             max_age = 1800
+            # domain = "127.0.0.1",
         )
         response.set_cookie(
             key = "refresh_token",
             value = refresh_token,
             httponly = True,
-            secure = True,
-            samesite = "none",
-            domain = "127.0.0.1",
+            secure = IS_PRODUCTION,
+            samesite = "none" if IS_PRODUCTION else "lax",
             max_age = 604800
+            # domain = "127.0.0.1",
         )
     
         return {"message": "Login successful", "name": user["name"]}
