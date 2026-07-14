@@ -155,7 +155,7 @@ async function editProduct() {
         const row = event.target.closest("tr")
         if (!row) return;
 
-        const cells = Array.from(row.querySelectorAll("td")).slice(-2); // Exclude the first and last two cells (ID and buttons)
+        const cells = Array.from(row.querySelectorAll("td")).slice(0,-2); // Exclude the first and last two cells (ID and buttons)
 
         const editRow = document.createElement("tr");
 
@@ -180,7 +180,6 @@ async function editProduct() {
                 tbody.replaceChild(row, editRow);
 
                 const updatedProduct = {
-                    id: inputs[0].value,
                     medicine_name: inputs[1].value,
                     batch_no: inputs[2].value,
                     expiry_date: inputs[3].value,
