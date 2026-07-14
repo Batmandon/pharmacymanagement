@@ -5,8 +5,8 @@ from services.JWT import create_access_token, create_refresh_token, decode_token
 from fastapi import Response, Request, HTTPException, Request
 import os
 
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Helperfunction~~~~~~~~~~~~~~~~~~~~~~~~~~~
 IS_PRODUCTION = os.getenv("ENVIRONMENT") == "production"
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Helperfunction~~~~~~~~~~~~~~~~~~~~~~~~~~~
 def get_user(cursor, email: str):
     cursor.execute("SELECT * FROM users WHERE email = %s", (email,))
     return cursor.fetchone()

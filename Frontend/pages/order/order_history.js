@@ -21,7 +21,7 @@ async function logOrder() {
         tbody.innerHTML = "";
 
         if (!Array.isArray(orders) || orders.length === 0) {
-            tbody.innerHTML = "<tr><td colspan='2'>No orders have been made</td></tr>";
+            tbody.innerHTML = "<tr><td colspan='2'>No orders have been sent</td></tr>";
             return;
         }
 

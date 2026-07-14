@@ -19,6 +19,10 @@ async function fetchOrder() {
     });
 
     const orders = await response.json();
+    if (orders.length === 0) {
+        const table = document.getElementById("table")
+        table.innerHTML = '<tr><td>No orders have been made</td></tr>';
+    }
     ordersToSend = orders;
     console.log("ordersToSend:", ordersToSend); // Store the fetched orders in the global variable
     console.log(orders);
